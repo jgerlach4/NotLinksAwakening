@@ -11,7 +11,7 @@ public class PlayerAnimation : MonoBehaviour
     private bool m_isWallSliding = false;
     private bool m_grounded = false;
     private bool m_rolling = false;
-    private int m_facingDirection = 1;
+    public int m_facingDirection = 1;
     private int m_currentAttack = 0;
     private float m_timeSinceAttack = 0.0f;
     private float m_delayToIdle = 0.0f;
