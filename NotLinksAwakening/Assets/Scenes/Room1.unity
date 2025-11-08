@@ -343,7 +343,7 @@ Transform:
   m_GameObject: {fileID: 245568434}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.40722173, y: 1.0607982, z: -8.972807}
+  m_LocalPosition: {x: -0, y: -0.3, z: -8.972807}
   m_LocalScale: {x: 0, y: -0.0045216167, z: -0.0045216167}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -447,6 +447,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 316055983}
+  - component: {fileID: 316055988}
   - component: {fileID: 316055986}
   - component: {fileID: 316055982}
   - component: {fileID: 316055984}
@@ -621,6 +622,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
   speed: 0.5
+--- !u!114 &316055988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316055981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e102e8151fc2984d82aaf768aa975fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &501801819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3532,6 +3550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHealth: 100
+  healthBar: {fileID: 0}
 --- !u!1 &1970882289
 GameObject:
   m_ObjectHideFlags: 0
@@ -3541,6 +3560,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1970882290}
+  - component: {fileID: 1970882296}
   - component: {fileID: 1970882292}
   - component: {fileID: 1970882295}
   - component: {fileID: 1970882294}
@@ -3715,6 +3735,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyFollow
   speed: 0.5
+--- !u!114 &1970882296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970882289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e102e8151fc2984d82aaf768aa975fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
