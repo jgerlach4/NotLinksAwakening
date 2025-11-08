@@ -4,6 +4,7 @@ public class PlayerAnimation : MonoBehaviour
 {
 
     private Animator m_animator;
+    private Rigidbody2D rb;
 
     private bool m_noBlood = true;
 
@@ -21,6 +22,9 @@ public class PlayerAnimation : MonoBehaviour
     void Start()
     {
         m_animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+
+        rb.freezeRotation = true;
 
         m_grounded = true;
         m_animator.SetBool("Grounded", m_grounded);
