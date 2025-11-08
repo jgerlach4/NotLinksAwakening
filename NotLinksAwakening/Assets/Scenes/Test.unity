@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 87768784}
   - component: {fileID: 87768787}
   m_Layer: 20
-  m_Name: Square
+  m_Name: Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 478940090}
   - component: {fileID: 478940093}
   m_Layer: 20
-  m_Name: Square (1)
+  m_Name: BatThing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3463,7 +3463,7 @@ GameObject:
   - component: {fileID: 1157947103}
   - component: {fileID: 1157947106}
   m_Layer: 20
-  m_Name: Square (3)
+  m_Name: Skeleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3853,7 +3853,7 @@ GameObject:
   - component: {fileID: 1511412509}
   - component: {fileID: 1511412512}
   m_Layer: 20
-  m_Name: Square (2)
+  m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
