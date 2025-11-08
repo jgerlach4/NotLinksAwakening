@@ -21,6 +21,7 @@ namespace Cainos.PixelArtTopDown_Basic
             Vector2 dir = Vector2.zero;
             if (Input.GetKey(KeyCode.A))
             {
+                Debug.Log("A key is pressed");
                 dir.x = -1;
                 animator.SetInteger("Direction", 3);
             }
