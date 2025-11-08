@@ -5,7 +5,7 @@ public class PlayerAnimation : MonoBehaviour
 
     private Animator m_animator;
 
-    private bool m_noBlood = false;
+    private bool m_noBlood = true;
 
     private bool m_isWallSliding = false;
     private bool m_grounded = false;
@@ -22,7 +22,7 @@ public class PlayerAnimation : MonoBehaviour
     {
         m_animator = GetComponent<Animator>();
 
-        m_grounded = false;
+        m_grounded = true;
         m_animator.SetBool("Grounded", m_grounded);
     }
 
@@ -40,21 +40,8 @@ public class PlayerAnimation : MonoBehaviour
         if (m_rollCurrentTime > m_rollDuration)
             m_rolling = false;
 
-        //Check if character just landed on the ground
-        if (!m_grounded)
-        {
-            m_grounded = true;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
-
-        //Check if character just started falling
-        if (m_grounded)
-        {
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-        }
-
         float inputX = Input.GetAxis("Horizontal");
+        float inputY = Input.GetAxis("Vertical");
 
         // Swap direction of sprite depending on walk direction
         if (inputX > 0)
@@ -99,30 +86,12 @@ public class PlayerAnimation : MonoBehaviour
             m_timeSinceAttack = 0.0f;
         }
 
-        // Block
-        else if (Input.GetMouseButtonDown(1) && !m_rolling)
-        {
-            m_animator.SetTrigger("Block");
-            m_animator.SetBool("IdleBlock", true);
-        }
-
-        else if (Input.GetMouseButtonUp(1))
-            m_animator.SetBool("IdleBlock", false);
 
         // Roll
         else if (Input.GetKeyDown("left shift") && !m_rolling && !m_isWallSliding)
         {
             m_rolling = true;
             m_animator.SetTrigger("Roll");
-        }
-
-
-        //Jump
-        else if (Input.GetKeyDown("space") && m_grounded && !m_rolling)
-        {
-            m_animator.SetTrigger("Jump");
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
         }
 
         //Run
@@ -132,6 +101,14 @@ public class PlayerAnimation : MonoBehaviour
             m_delayToIdle = 0.05f;
             m_animator.SetInteger("AnimState", 1);
         }
+
+        else if (Mathf.Abs(inputY) > Mathf.Epsilon)
+        {
+            // Reset timer
+            m_delayToIdle = 0.05f;
+            m_animator.SetInteger("AnimState", 1);
+        }
+
 
         //Idle
         else
